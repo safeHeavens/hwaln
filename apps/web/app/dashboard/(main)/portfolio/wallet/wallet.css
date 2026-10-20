@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+.wallet-id-screen{
+    /*background: var(--hw-bg);*/
+    background-color: #7c83ff;
+    height: 100vh;
+    min-width: 100vw;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 10;
+}

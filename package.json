@@ -1,0 +1,15 @@
+{
+  "name": "hwaln",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "dev:web": "pnpm --filter @hwaln/web dev",
+    "dev:api": "pnpm --filter @hwaln/api start:dev",
+    "build:web": "pnpm --filter @hwaln/web build",
+    "build:api": "pnpm --filter @hwaln/api build"
+  },
+  "dependencies": {
+    "drizzle-kit": "^0.31.11"
+  }
+}
