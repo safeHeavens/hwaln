@@ -1,0 +1,113 @@
+
+:root {
+    color-scheme: light;
+    --hw-bg: #f7f8f5;
+    --hw-surface: #ffffff;
+    --hw-border: rgba(52, 36, 61, 0.10);
+    --hw-muted: #777580;
+    --hw-text: #28212f;
+    --hw-green: #a0e875;
+    --hw-green-dark: #245537;
+    --hw-plum: #34243d;
+}
+
+html {
+    min-height: 100%;
+    background: var(--hw-bg);
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: var(--hw-bg);
+    color: var(--hw-text);
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.hw-background {
+    position: relative;
+    isolation: isolate;
+    background:
+            radial-gradient(
+                    ellipse at 10% 5%,
+                    rgba(133, 93, 153, 0.10),
+                    transparent 40%
+            ),
+            radial-gradient(
+                    ellipse at 90% 85%,
+                    rgba(104, 190, 105, 0.12),
+                    transparent 40%
+            ),
+            var(--hw-bg);
+}
+
+.hw-grid {
+    background-image:
+            linear-gradient(rgba(52, 36, 61, 0.035) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(52, 36, 61, 0.035) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(to bottom, black, transparent 92%);
+}
+
+.hw-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 49px;
+    border: 1px solid var(--hw-plum);
+    border-radius: 12px;
+    padding: 0 20px;
+    background: var(--hw-plum);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    transition:
+            transform 180ms ease,
+            background 180ms ease,
+            border-color 180ms ease;
+}
+
+.hw-primary:hover {
+    transform: translateY(-1px);
+    border-color: #45304f;
+    background: #45304f;
+}
+
+.hw-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 49px;
+    border: 1px solid rgba(52, 36, 61, 0.15);
+    border-radius: 12px;
+    padding: 0 20px;
+    background: #ffffff;
+    color: var(--hw-plum);
+    font-size: 14px;
+    font-weight: 600;
+    transition:
+            transform 180ms ease,
+            background 180ms ease,
+            border-color 180ms ease;
+}
+
+.hw-secondary:hover {
+    transform: translateY(-1px);
+    border-color: rgba(52, 36, 61, 0.3);
+    background: #faf9fb;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

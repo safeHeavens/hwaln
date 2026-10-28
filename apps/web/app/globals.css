@@ -16,7 +16,7 @@
     --hw-muted: #66758a;
     --hw-mint: #087f68;
     --hw-violet: #7566d8;
-
+    --hw-green: #a8f078;
     --hw-shadow: 0 18px 55px rgba(15, 23, 42, 0.07);
     --hw-radius: 20px;
 
@@ -2009,3 +2009,225 @@ a {
 .toll{
 
 }
+
+
+/*
+@import "tailwindcss";
+
+:root {
+    color-scheme: dark;
+    --hw-bg: #0b0c10;
+    --hw-surface: #12151b;
+    --hw-border: rgba(255, 255, 255, 0.09);
+    --hw-muted: #9299a7;
+    --hw-text: #f5f7f5;
+    --hw-green: #a8f078;
+    --hw-green-dark: #173d2b;
+    --hw-plum: #281c32;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background: var(--hw-bg);
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: var(--hw-bg);
+    color: var(--hw-text);
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+*/
+button,
+input {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--hw-green);
+    outline-offset: 4px;
+}
+
+::selection {
+    background: rgba(168, 240, 120, 0.25);
+    color: white;
+}
+
+.hw-background {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+            radial-gradient(ellipse at 12% 4%, rgba(78, 42, 91, 0.28), transparent 39%),
+            radial-gradient(ellipse at 86% 88%, rgba(23, 100, 64, 0.17), transparent 38%),
+            var(--hw-bg);
+}
+
+.hw-grid {
+    background-image:
+            linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(to bottom, black, transparent 92%);
+}
+
+.hw-prim {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 46px;
+    border: 1px solid transparent;
+    border-radius: 13px;
+    padding: 0 20px;
+    background: var(--hw-green);
+    background-color: #a8f078;
+    color: #11170f;
+    font-size: 14px;
+    font-weight: 700;
+    transition: transform 180ms ease, background 180ms ease;
+}
+
+.hw-prim:hover {
+    transform: translateY(-1px);
+    background: #b9ff8b;
+}
+
+.hw-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    border: 1px solid #28212f;
+    border-radius: 13px;
+    padding: 0 20px;
+    background: rgba(255, 255, 255, 0.035);
+    color: #28212f;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 180ms ease, border-color 180ms ease;
+}
+
+.hw-secondary:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.075);
+}
+
+.hw-input {
+    width: 100%;
+    min-height: 49px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 0 14px;
+    background: rgba(255, 255, 255, 0.035);
+    color: var(--hw-text);
+    font-size: 14px;
+    transition: border-color 180ms ease, background 180ms ease;
+}
+
+.hw-input::placeholder {
+    color: #737b89;
+}
+
+.hw-input:focus {
+    border-color: rgba(168, 240, 120, 0.65);
+    background: rgba(255, 255, 255, 0.05);
+    outline: none;
+}
+
+@keyframes hw-orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes hw-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-11px); }
+}
+
+@keyframes hw-pulse {
+    0%, 100% { opacity: 0.35; transform: scale(0.94); }
+    50% { opacity: 0.8; transform: scale(1.04); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+
+/* Log in: filled button with an upward pill-fill hover */
+.hw-pill-fill {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--hw-plum);
+    color: #ffffff;
+    border-color: var(--hw-plum);
+    transition:
+            transform 220ms ease,
+            box-shadow 220ms ease;
+}
+
+.hw-pill-fill::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    border-radius: inherit;
+    background: #528847;
+    transform: translateY(102%);
+    transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hw-pill-fill:hover::before {
+    transform: translateY(0);
+}
+
+.hw-pill-fill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px -10px rgba(82, 136, 71, 0.55);
+}
+
+.hw-pill-fill:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.hw-pill-fill:focus-visible {
+    outline: 2px solid #528847;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hw-pill-fill,
+    .hw-pill-fill::before {
+        transition: none;
+    }
+}
+
